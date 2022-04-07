@@ -1,6 +1,10 @@
 ```shell
-tar -czvf spug.tar.gz docs  LICENSE  README.md  spug_api  spug_web
-tar -czvf spug.tar.gz spug
+cd spug_web
+cnpm install
+npm run build
+cd ../../
+tar -czvf spug.tar.gz spug --exclude=spug_web/node_modules/*
+# tar -czvf spug.tar.gz docs  LICENSE  README.md  spug_api  spug_web
 sudo docker build -f Dockerfile -t yiluxiangbei/spug:v1.0 .
 
 sudo docker run -d --restart=always --name=spug -p 8032:80 -v $(pwd)/spug-data:/data yiluxiangbei/spug:v1.0
