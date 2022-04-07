@@ -15,6 +15,9 @@ sudo docker build --no-cache -f Dockerfile -t yiluxiangbei/spug:v1.0 .
 sudo docker build -f Dockerfile.base -t yiluxiangbei/giraffe-base:v1.0 .
 sudo docker build --no-cache -f Dockerfile.app -t yiluxiangbei/giraffe:v1.0 .
 
+sudo docker push yiluxiangbei/giraffe-base:v1.0
+sudo docker push yiluxiangbei/giraffe:v1.0
+
 cd ../../
 sudo docker stop giraffe
 sudo docker rm giraffe
@@ -30,6 +33,7 @@ sudo docker run -d --restart=always --name=spug -p 8032:80 -v $(pwd)/spug-data:/
 sudo docker exec spug init_spug admin spug.dev
 
 sudo docker exec -it spug bash
+sudo docker exec -it giraffe bash
 
 sudo docker cp docs/docker/nginx.conf spug:/etc/nginx/nginx.conf
 sudo docker stop spug
