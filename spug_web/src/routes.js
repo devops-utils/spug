@@ -56,8 +56,8 @@ export default [
       {title: '模板管理', auth: 'exec.template.view', path: '/exec/template', component: ExecTemplate},
     ]
   },
-  /*{
-    icon: <FlagOutlined/>, title: '应用发布', auth: 'deploy.app.view|deploy.repository.view|deploy.request.view', child: [
+  {
+    icon: <FlagOutlined/>, title: '应用发布', auth: 'deploy.app.view|deploy.repository.view|deploy.request.view', showMenu: false, child: [
       {title: '发布配置', auth: 'deploy.app.view', path: '/deploy/app', component: DeployApp},
       {title: '构建仓库', auth: 'deploy.repository.view', path: '/deploy/repository', component: DeployRepository},
       {title: '发布申请', auth: 'deploy.request.view', path: '/deploy/request', component: DeployRequest},
@@ -85,7 +85,7 @@ export default [
       {title: '报警联系人', auth: 'alarm.contact.view', path: '/alarm/contact', component: AlarmContact},
       {title: '报警联系组', auth: 'alarm.group.view', path: '/alarm/group', component: AlarmGroup},
     ]
-  },*/
+  },
   {
     icon: <SettingOutlined/>, title: '系统管理', auth: "system.account.view|system.role.view|system.setting.view", child: [
       {title: '账户管理', auth: 'system.account.view', path: '/system/account', component: SystemAccount},
