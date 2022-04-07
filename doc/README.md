@@ -12,6 +12,8 @@ cp ../../../spug.tar.gz .
 sudo docker build -f Dockerfile -t yiluxiangbei/spug:v1.0 .
 
 cd ../../
+sudo docker stop spug
+sudo docker rm spug
 sudo docker run -d --restart=always --name=spug -p 8032:80 -v $(pwd)/spug-data:/data yiluxiangbei/spug:v1.0
 sudo docker exec spug init_spug admin spug.dev
 
