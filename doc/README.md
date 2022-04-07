@@ -10,6 +10,7 @@ tar -czvf spug.tar.gz spug --exclude=spug_web/node_modules/* --exclude=spug-data
 cd spug/docs/docker/
 cp ../../../spug.tar.gz .
 sudo docker build -f Dockerfile -t yiluxiangbei/spug:v1.0 .
+sudo docker build --no-cache -f Dockerfile -t yiluxiangbei/spug:v1.0 .
 
 cd ../../
 sudo docker stop spug
