@@ -42,6 +42,9 @@ docker run -d --restart=always --name=spug -p 80:80 -v /spug:/data registry.aliy
 docker run -d --restart=always --name=spug -p 80:80 -v /spug/:/data -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker registry.aliyuncs.com/openspug/spug
 
 docker exec spug init_spug admin spug.dev
+
+sudo docker rmi $(docker images | grep "<none>" | awk "{print \$3}")
+sudo docker rmi `docker images | grep none | awk '{print $3}'`
 ```
 
 ```
