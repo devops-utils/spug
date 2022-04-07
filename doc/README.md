@@ -28,6 +28,7 @@ sudo docker start spug
 sudo docker rm spug
 
 Giraffe 长劲鹿
+GIRAFFE
 
 yum install -y yum-utils
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
