@@ -86,9 +86,7 @@ export default observer(function Ext1Setup1() {
           onChange={v => info['is_audit'] = v}/>
       </Form.Item>
       <Form.Item label="消息通知" extra={<span>
-        应用审核及发布成功或失败结果通知，
-        <a target="_blank" rel="noopener noreferrer"
-           href="https://spug.cc/docs/use-problem#use-dd">钉钉收不到通知？</a>
+        应用审核及发布成功或失败结果通知
       </span>}>
         <Input
           addonBefore={(

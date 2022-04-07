@@ -23,7 +23,7 @@ export default observer(function () {
       .finally(() => store.loading = false)
   }
 
-  const spugWx = <img src="https://cdn.spug.cc/img/spug-weixin.jpeg" alt='spug'/>;
+  const spugWx = <img src="" alt='spug'/>;
   return (
     <React.Fragment>
       <div className={styles.title}>基本设置</div>

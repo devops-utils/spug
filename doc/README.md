@@ -55,6 +55,13 @@ django 跨域
 https://www.jianshu.com/p/16ce416555fe
 
 https://spug.cc/docs/alarm-contact
+https://spug.cc/docs/use-problem#use-dd
+https://spug.cc/docs/batch-exec
+https://spug.cc/docs/practice/
+https://spug.cc/docs/conf-app
+https://spug.cc/docs/deploy-config#global-env
+https://spug.cc/docs/use-problem#clone
+https://spug.cc/docs/deploy-config#transfer
 ```
 
 ```shell

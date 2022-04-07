@@ -59,10 +59,7 @@ export default function () {
             title: '安全警告',
             className: styles.tips,
             content: <div>
-              未能获取到访问者的真实IP，无法提供基于请求来源IP的合法性验证，详细信息请参考
-              <a target="_blank"
-                 href="https://spug.cc/docs/practice/"
-                 rel="noopener noreferrer">官方文档</a>。
+              未能获取到访问者的真实IP，无法提供基于请求来源IP的合法性验证
             </div>,
             onOk: () => doLogin(data)
           })

@@ -83,9 +83,7 @@ export default observer(function () {
       </Form.Item>
       <Form.Item label="失败通知" extra={(
           <span>
-            任务执行失败告警通知，
-            <a target="_blank" rel="noopener noreferrer"
-               href="https://spug.cc/docs/use-problem#use-dd">钉钉收不到通知？</a>
+            任务执行失败告警通知
           </span>)}>
         <Input
           value={store.record.rst_notify.value}
