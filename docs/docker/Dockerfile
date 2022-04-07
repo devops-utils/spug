@@ -17,7 +17,8 @@ RUN pip3 install --no-cache-dir -i https://pypi.doubanio.com/simple/ \
     requests==2.22.0 \
     GitPython==3.0.8 \
     python-ldap==3.2.0 \
-    openpyxl==3.0.3
+    openpyxl==3.0.3 \
+    django-cors-headers
 
 ENV LANG=en_US.UTF-8
 RUN echo -e '\n# Source definitions\n. /etc/profile\n' >> /root/.bashrc

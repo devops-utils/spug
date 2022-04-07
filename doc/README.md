@@ -42,6 +42,7 @@ docker exec spug init_spug admin spug.dev
 
 ```
 django 跨域
+https://www.jianshu.com/p/16ce416555fe
 ```
 
 ```shell
