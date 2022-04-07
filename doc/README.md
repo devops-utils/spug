@@ -1,6 +1,10 @@
 ```shell
 tar -czvf spug.tar.gz docs  LICENSE  README.md  spug_api  spug_web
+tar -czvf spug.tar.gz spug
 sudo docker build -f Dockerfile -t yiluxiangbei/spug:v1.0 .
+
+sudo docker run -d --restart=always --name=spug -p 8032:80 -v $(pwd)/spug-data:/data yiluxiangbei/spug:v1.0
+sudo docker exec spug init_spug admin spug.dev
 
 sudo docker run -d --restart=always --name=spug -p 8032:80 -v $(pwd)/spug-data:/data registry.aliyuncs.com/openspug/spug
 sudo docker exec spug init_spug admin spug.dev
