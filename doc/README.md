@@ -18,6 +18,7 @@ sudo docker exec spug init_spug admin spug.dev
 
 sudo docker exec -it spug bash
 
+sudo docker cp docs/docker/nginx.conf spug:/etc/nginx/nginx.conf
 sudo docker stop spug
 sudo docker start spug
 sudo docker rm spug
