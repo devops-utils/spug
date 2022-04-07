@@ -19,6 +19,7 @@ sudo docker exec spug init_spug admin spug.dev
 sudo docker exec -it spug bash
 
 sudo docker stop spug
+sudo docker start spug
 sudo docker rm spug
 
 yum install -y yum-utils
