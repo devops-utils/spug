@@ -7,7 +7,7 @@ const proxy = require('http-proxy-middleware');
 
 module.exports = function (app) {
   app.use(proxy('/api/', {
-    target: 'http://49.232.6.131:8032',
+    target: 'http://49.232.6.131:8032/api',
     changeOrigin: true,
     ws: true,
     headers: {'X-Real-IP': '1.1.1.1'},
