@@ -1,4 +1,6 @@
 ```shell
+sudo docker build -f Dockerfile -t yiluxiangbei/spug:v1.0 .
+
 sudo docker run -d --restart=always --name=spug -p 8032:80 -v $(pwd)/spug:/data registry.aliyuncs.com/openspug/spug
 sudo docker exec spug init_spug admin spug.dev
 
