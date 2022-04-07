@@ -76,9 +76,7 @@ export default observer(function () {
           </Form.Item>
           <Test mode="4" name="email"/>
         </Form.Item>
-        <Form.Item label="微信Token" extra={
-          <a target="_blank" rel="noopener noreferrer"
-             href="https://spug.cc/docs/alarm-contact/">如何获取微信 Token ？</a>}>
+        <Form.Item label="微信Token">
           <Form.Item noStyle name="wx_token">
             <Input placeholder="请输入微信token"/>
           </Form.Item>

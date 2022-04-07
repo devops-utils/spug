@@ -53,6 +53,8 @@ sudo docker rmi `docker images | grep none | awk '{print $3}'`
 ```
 django 跨域
 https://www.jianshu.com/p/16ce416555fe
+
+https://spug.cc/docs/alarm-contact
 ```
 
 ```shell
