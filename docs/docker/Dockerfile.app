@@ -1,4 +1,4 @@
-FROM centos:7.8.2003
+FROM yiluxiangbei/giraffe-base:v1.0
 
 ENV LANG=en_US.UTF-8
 RUN echo -e '\n# Source definitions\n. /etc/profile\n' >> /root/.bashrc

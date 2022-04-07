@@ -11,6 +11,8 @@ cd spug/docs/docker/
 cp ../../../spug.tar.gz .
 sudo docker build -f Dockerfile -t yiluxiangbei/spug:v1.0 .
 sudo docker build --no-cache -f Dockerfile -t yiluxiangbei/spug:v1.0 .
+sudo docker build -f Dockerfile.base -t yiluxiangbei/giraffe-base:v1.0
+sudo docker build -f Dockerfile.app -t yiluxiangbei/giraffe:v1.0
 
 cd ../../
 sudo docker stop spug
