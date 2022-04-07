@@ -27,6 +27,9 @@ export default function Sider(props) {
   }
 
   function _makeSubMenu(menu) {
+    if(menu.hidden) {
+      return
+    }
     return (
       <Menu.SubMenu key={menu.title} title={<span>{menu.icon}<span>{menu.title}</span></span>}>
         {menu.child.map(menu => makeMenu(menu))}
@@ -35,6 +38,9 @@ export default function Sider(props) {
   }
 
   function _makeItem(menu) {
+    if(menu.hidden) {
+      return
+    }
     return (
       <Menu.Item key={menu.path}>
         {menu.icon}

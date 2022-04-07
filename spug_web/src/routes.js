@@ -57,7 +57,7 @@ export default [
     ]
   },
   {
-    icon: <FlagOutlined/>, title: '应用发布', auth: 'deploy.app.view|deploy.repository.view|deploy.request.view', showMenu: false, child: [
+    icon: <FlagOutlined/>, title: '应用发布', auth: 'deploy.app.view|deploy.repository.view|deploy.request.view', hidden: true, child: [
       {title: '发布配置', auth: 'deploy.app.view', path: '/deploy/app', component: DeployApp},
       {title: '构建仓库', auth: 'deploy.repository.view', path: '/deploy/repository', component: DeployRepository},
       {title: '发布申请', auth: 'deploy.request.view', path: '/deploy/request', component: DeployRequest},
@@ -68,19 +68,20 @@ export default [
     title: '任务计划',
     auth: 'schedule.schedule.view',
     path: '/schedule',
+    hidden: true,
     component: ScheduleIndex
   },
   {
-    icon: <DeploymentUnitOutlined/>, title: '配置中心', auth: 'config.env.view|config.src.view|config.app.view', child: [
+    icon: <DeploymentUnitOutlined/>, title: '配置中心', auth: 'config.env.view|config.src.view|config.app.view', hidden: true, child: [
       {title: '环境管理', auth: 'config.env.view', path: '/config/environment', component: ConfigEnvironment},
       {title: '服务配置', auth: 'config.src.view', path: '/config/service', component: ConfigService},
       {title: '应用配置', auth: 'config.app.view', path: '/config/app', component: ConfigApp},
       {path: '/config/setting/:type/:id', component: ConfigSetting},
     ]
   },
-  {icon: <MonitorOutlined/>, title: '监控中心', auth: 'monitor.monitor.view', path: '/monitor', component: MonitorIndex},
+  {icon: <MonitorOutlined/>, title: '监控中心', auth: 'monitor.monitor.view', path: '/monitor', hidden: true, component: MonitorIndex},
   {
-    icon: <AlertOutlined/>, title: '报警中心', auth: 'alarm.alarm.view|alarm.contact.view|alarm.group.view', child: [
+    icon: <AlertOutlined/>, title: '报警中心', auth: 'alarm.alarm.view|alarm.contact.view|alarm.group.view', hidden: true, child: [
       {title: '报警历史', auth: 'alarm.alarm.view', path: '/alarm/alarm', component: AlarmIndex},
       {title: '报警联系人', auth: 'alarm.contact.view', path: '/alarm/contact', component: AlarmContact},
       {title: '报警联系组', auth: 'alarm.group.view', path: '/alarm/group', component: AlarmGroup},
