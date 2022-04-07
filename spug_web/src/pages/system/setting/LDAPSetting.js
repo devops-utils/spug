@@ -45,7 +45,7 @@ export default observer(function () {
           <Input placeholder="例如：389"/>
         </Form.Item>
         <Form.Item required name="admin_dn" label="管理员DN">
-          <Input placeholder="例如：cn=admin,dc=spug,dc=dev"/>
+          <Input placeholder="例如：cn=admin,dc=giraffe,dc=dev"/>
         </Form.Item>
         <Form.Item required name="password" label="管理员密码">
           <Input.Password placeholder="请输入LDAP管理员密码"/>
@@ -54,7 +54,7 @@ export default observer(function () {
           <Input placeholder="例如：cn"/>
         </Form.Item>
         <Form.Item required name="base_dn" label="基本DN">
-          <Input placeholder="例如：dc=spug,dc=dev"/>
+          <Input placeholder="例如：dc=giraffe,dc=dev"/>
         </Form.Item>
         <Space>
           <Button type="danger" loading={loading} onClick={ldapTest}>测试LDAP</Button>
