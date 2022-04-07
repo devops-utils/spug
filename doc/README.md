@@ -3,10 +3,13 @@ cd spug_web
 cnpm install
 npm run build
 cd ../../
-tar -czvf spug.tar.gz spug --exclude=spug_web/node_modules/*
+tar -czvf spug.tar.gz spug --exclude=spug_web/node_modules/* --exclude=spug-data/* --exclude=doc/*
 # tar -czvf spug.tar.gz docs  LICENSE  README.md  spug_api  spug_web
+cd spug/docs/docker/
+cp ../../../spug.tar.gz .
 sudo docker build -f Dockerfile -t yiluxiangbei/spug:v1.0 .
 
+cd ../../
 sudo docker run -d --restart=always --name=spug -p 8032:80 -v $(pwd)/spug-data:/data yiluxiangbei/spug:v1.0
 sudo docker exec spug init_spug admin spug.dev
 
