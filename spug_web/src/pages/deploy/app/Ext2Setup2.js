@@ -135,7 +135,7 @@ class Ext2Setup2 extends React.Component {
                     )}/>
                 </Form.Item>
               ) : null,
-              <Form.Item key={2} required label="目标路径" extra={}>
+              <Form.Item key={2} required label="目标路径" extra={<a></a>}>
                 <Input
                   disabled={store.isReadOnly}
                   spellCheck={false}

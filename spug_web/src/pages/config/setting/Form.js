@@ -77,7 +77,7 @@ export default observer(function () {
             name="is_public"
             valuePropName="checked"
             initialValue={store.record.is_public === undefined || store.record.is_public}
-            tooltip={}>
+            tooltip={<a></a>}>
             <Switch checkedChildren="公共" unCheckedChildren="私有"/>
           </Form.Item>
         )}
