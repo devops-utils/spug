@@ -16,6 +16,8 @@ sudo docker exec spug init_spug admin spug.dev
 sudo docker run -d --restart=always --name=spug -p 8032:80 -v $(pwd)/spug-data:/data registry.aliyuncs.com/openspug/spug
 sudo docker exec spug init_spug admin spug.dev
 
+sudo docker exec -it spug bash
+
 sudo docker stop spug
 sudo docker rm spug
 
