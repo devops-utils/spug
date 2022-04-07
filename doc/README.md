@@ -6,6 +6,7 @@ cnpm install
 npm run build
 cd ../../
 tar -czvf spug.tar.gz spug --exclude=spug_web/node_modules/* --exclude=spug-data/* --exclude=doc/*
+tar -czvf spug.tar.gz spug --exclude=spug_web/node_modules/* --exclude=giraffe-data/* --exclude=doc/*
 # tar -czvf spug.tar.gz docs  LICENSE  README.md  spug_api  spug_web
 cd spug/docs/docker/
 cp ../../../spug.tar.gz .
