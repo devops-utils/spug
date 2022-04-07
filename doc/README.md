@@ -12,9 +12,14 @@ cp ../../../spug.tar.gz .
 sudo docker build -f Dockerfile -t yiluxiangbei/spug:v1.0 .
 sudo docker build --no-cache -f Dockerfile -t yiluxiangbei/spug:v1.0 .
 sudo docker build -f Dockerfile.base -t yiluxiangbei/giraffe-base:v1.0
-sudo docker build -f Dockerfile.app -t yiluxiangbei/giraffe:v1.0
+sudo docker build --no-cache -f Dockerfile.app -t yiluxiangbei/giraffe:v1.0
 
 cd ../../
+sudo docker stop giraffe
+sudo docker rm giraffe
+sudo docker run -d --restart=always --name=giraffe -p 8032:80 -v $(pwd)/giraffe-data:/data yiluxiangbei/giraffe:v1.0
+sudo docker exec giraffe init_giraffe admin giraffe.dev
+
 sudo docker stop spug
 sudo docker rm spug
 sudo docker run -d --restart=always --name=spug -p 8032:80 -v $(pwd)/spug-data:/data yiluxiangbei/spug:v1.0

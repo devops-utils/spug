@@ -3,7 +3,7 @@ FROM yiluxiangbei/giraffe-base:v1.0
 ENV LANG=en_US.UTF-8
 RUN echo -e '\n# Source definitions\n. /etc/profile\n' >> /root/.bashrc
 RUN mkdir /data
-COPY init_spug /usr/bin/
+COPY init_giraffe /usr/bin/
 COPY nginx.conf /etc/nginx/
 COPY ssh_config /etc/ssh/
 COPY spug.ini /etc/supervisord.d/
