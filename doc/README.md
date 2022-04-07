@@ -1,4 +1,6 @@
 ```shell
+cd spug
+git pull
 cd spug_web
 cnpm install
 npm run build
