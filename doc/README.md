@@ -40,6 +40,10 @@ docker run -d --restart=always --name=spug -p 80:80 -v /spug/:/data -v /var/run/
 docker exec spug init_spug admin spug.dev
 ```
 
+```
+django 跨域
+```
+
 ```shell
 tar --help
 Usage: tar [OPTION...] [FILE]...
