@@ -43,6 +43,8 @@ docker run -d --restart=always --name=spug -p 80:80 -v /spug/:/data -v /var/run/
 
 docker exec spug init_spug admin spug.dev
 
+Giraffe 长劲鹿
+
 sudo docker rmi $(docker images | grep "<none>" | awk "{print \$3}")
 sudo docker rmi `docker images | grep none | awk '{print $3}'`
 ```
