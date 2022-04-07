@@ -31,17 +31,17 @@ export default observer(function () {
         <Form.Item
           label="调用凭据"
           labelCol={{span: 24}}
-          extra={<span>如需要使用Spug的邮件、微信和MFA等内置服务，请关注公众号
+          extra={<span>如需要使用Giraffe的邮件、微信和MFA等内置服务，请关注公众号
               <span style={{color: '#008dff', cursor: 'pointer'}}>
                   <Popover content={spugWx}>
-                    <span>Spug</span>
+                    <span>Giraffe</span>
                   </Popover>
               </span>
               在【我的】页面获取调用凭据，否则请留空。</span>}>
           <Input
             value={store.settings.spug_key}
             onChange={e => store.update('spug_key', e.target.value)}
-            placeholder="请输入Spug微信公众号获取到的Token"/>
+            placeholder="请输入Giraffe微信公众号获取到的Token"/>
         </Form.Item>
         <Form.Item style={{marginTop: 24}}>
           <Button type="primary" loading={store.loading} onClick={handleSubmit}>保存设置</Button>

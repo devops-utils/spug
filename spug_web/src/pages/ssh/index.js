@@ -42,7 +42,7 @@ function WebSSH(props) {
   const [width, setWidth] = useState(280);
 
   useEffect(() => {
-    window.document.title = 'Spug web terminal'
+    window.document.title = 'Giraffe web terminal'
     window.addEventListener('beforeunload', leaveTips)
     fetchNodes()
     return () => window.removeEventListener('beforeunload', leaveTips)

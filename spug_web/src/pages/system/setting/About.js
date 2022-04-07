@@ -61,18 +61,11 @@ class About extends React.Component {
           <Descriptions.Item label="操作系统">{info['system_version']}</Descriptions.Item>
           <Descriptions.Item label="Python版本">{info['python_version']}</Descriptions.Item>
           <Descriptions.Item label="Django版本">{info['django_version']}</Descriptions.Item>
-          <Descriptions.Item label="Spug API版本">{info['spug_version']}</Descriptions.Item>
-          <Descriptions.Item label="Spug Web版本">{VERSION}</Descriptions.Item>
-          <Descriptions.Item label="官网文档">
-            <a href="https://spug.cc" target="_blank" rel="noopener noreferrer">https://spug.cc</a>
-          </Descriptions.Item>
-          <Descriptions.Item label="更新日志">
-            <a href="https://spug.cc/docs/change-log/" target="_blank"
-               rel="noopener noreferrer">https://spug.cc/docs/change-log/</a>
-          </Descriptions.Item>
+          <Descriptions.Item label="Giraffe API版本">{info['spug_version']}</Descriptions.Item>
+          <Descriptions.Item label="Giraffe Web版本">{VERSION}</Descriptions.Item>
         </Descriptions>
         {info['spug_version'] !== VERSION && (
-          <Alert showIcon style={{width: 500}} type="warning" message="Spug API版本与Web版本不匹配，请尝试刷新浏览器后再次查看。"/>
+          <Alert showIcon style={{width: 500}} type="warning" message="Giraffe API版本与Web版本不匹配，请尝试刷新浏览器后再次查看。"/>
         )}
       </Spin>
     )
