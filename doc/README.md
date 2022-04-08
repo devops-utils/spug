@@ -87,6 +87,223 @@ https://spug.cc/docs/deploy-config#transfer
 ```
 
 ```shell
+daphne --help
+usage: daphne [-h] [-p PORT] [-b HOST] [--websocket_timeout WEBSOCKET_TIMEOUT]
+              [--websocket_connect_timeout WEBSOCKET_CONNECT_TIMEOUT]
+              [-u UNIX_SOCKET] [--fd FILE_DESCRIPTOR] [-e SOCKET_STRINGS]
+              [-v VERBOSITY] [-t HTTP_TIMEOUT] [--access-log ACCESS_LOG]
+              [--ping-interval PING_INTERVAL] [--ping-timeout PING_TIMEOUT]
+              [--application-close-timeout APPLICATION_CLOSE_TIMEOUT]
+              [--ws-protocol [WS_PROTOCOLS [WS_PROTOCOLS ...]]]
+              [--asgi-protocol {asgi2,asgi3,auto}] [--root-path ROOT_PATH]
+              [--proxy-headers] [--proxy-headers-host PROXY_HEADERS_HOST]
+              [--proxy-headers-port PROXY_HEADERS_PORT] [-s SERVER_NAME]
+              application
+
+Django HTTP/WebSocket server
+
+positional arguments:
+  application           The application to dispatch to as
+                        path.to.module:instance.path
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PORT, --port PORT  Port number to listen on
+  -b HOST, --bind HOST  The host/address to bind to
+  --websocket_timeout WEBSOCKET_TIMEOUT
+                        Maximum time to allow a websocket to be connected. -1
+                        for infinite.
+  --websocket_connect_timeout WEBSOCKET_CONNECT_TIMEOUT
+                        Maximum time to allow a connection to handshake. -1
+                        for infinite
+  -u UNIX_SOCKET, --unix-socket UNIX_SOCKET
+                        Bind to a UNIX socket rather than a TCP host/port
+  --fd FILE_DESCRIPTOR  Bind to a file descriptor rather than a TCP host/port
+                        or named unix socket
+  -e SOCKET_STRINGS, --endpoint SOCKET_STRINGS
+                        Use raw server strings passed directly to twisted
+  -v VERBOSITY, --verbosity VERBOSITY
+                        How verbose to make the output
+  -t HTTP_TIMEOUT, --http-timeout HTTP_TIMEOUT
+                        How long to wait for worker before timing out HTTP
+                        connections
+  --access-log ACCESS_LOG
+                        Where to write the access log (- for stdout, the
+                        default for verbosity=1)
+  --ping-interval PING_INTERVAL
+                        The number of seconds a WebSocket must be idle before
+                        a keepalive ping is sent
+  --ping-timeout PING_TIMEOUT
+                        The number of seconds before a WebSocket is closed if
+                        no response to a keepalive ping
+  --application-close-timeout APPLICATION_CLOSE_TIMEOUT
+                        The number of seconds an ASGI application has to exit
+                        after client disconnect before it is killed
+  --ws-protocol [WS_PROTOCOLS [WS_PROTOCOLS ...]]
+                        The WebSocket protocols you wish to support
+  --asgi-protocol {asgi2,asgi3,auto}
+                        The version of the ASGI protocol to use
+  --root-path ROOT_PATH
+                        The setting for the ASGI root_path variable
+  --proxy-headers       Enable parsing and using of X-Forwarded-For and
+                        X-Forwarded-Port headers and using that as the client
+                        address
+  --proxy-headers-host PROXY_HEADERS_HOST
+                        Specify which header will be used for getting the host
+                        part. Can be omitted, requires --proxy-headers to be
+                        specified when passed. "X-Real-IP" (when passed by
+                        your webserver) is a good candidate for this.
+  --proxy-headers-port PROXY_HEADERS_PORT
+                        Specify which header will be used for getting the port
+                        part. Can be omitted, requires --proxy-headers to be
+                        specified when passed.
+  -s SERVER_NAME, --server-name SERVER_NAME
+                        specify which value should be passed to response
+                        header Server attribute
+
+gunicorn --help
+usage: gunicorn [OPTIONS] [APP_MODULE]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -v, --version         show program's version number and exit
+  -c CONFIG, --config CONFIG
+                        The Gunicorn config file. [./gunicorn.conf.py]
+  -b ADDRESS, --bind ADDRESS
+                        The socket to bind. [['127.0.0.1:8000']]
+  --backlog INT         The maximum number of pending connections. [2048]
+  -w INT, --workers INT
+                        The number of worker processes for handling requests.
+                        [1]
+  -k STRING, --worker-class STRING
+                        The type of workers to use. [sync]
+  --threads INT         The number of worker threads for handling requests.
+                        [1]
+  --worker-connections INT
+                        The maximum number of simultaneous clients. [1000]
+  --max-requests INT    The maximum number of requests a worker will process
+                        before restarting. [0]
+  --max-requests-jitter INT
+                        The maximum jitter to add to the *max_requests*
+                        setting. [0]
+  -t INT, --timeout INT
+                        Workers silent for more than this many seconds are
+                        killed and restarted. [30]
+  --graceful-timeout INT
+                        Timeout for graceful workers restart. [30]
+  --keep-alive INT      The number of seconds to wait for requests on a Keep-
+                        Alive connection. [2]
+  --limit-request-line INT
+                        The maximum size of HTTP request line in bytes. [4094]
+  --limit-request-fields INT
+                        Limit the number of HTTP headers fields in a request.
+                        [100]
+  --limit-request-field_size INT
+                        Limit the allowed size of an HTTP request header
+                        field. [8190]
+  --reload              Restart workers when code changes. [False]
+  --reload-engine STRING
+                        The implementation that should be used to power
+                        :ref:`reload`. [auto]
+  --reload-extra-file FILES
+                        Extends :ref:`reload` option to also watch and reload
+                        on additional files [[]]
+  --spew                Install a trace function that spews every line
+                        executed by the server. [False]
+  --check-config        Check the configuration and exit. The exit status is 0
+                        if the [False]
+  --print-config        Print the configuration settings as fully resolved.
+                        Implies :ref:`check-config`. [False]
+  --preload             Load application code before the worker processes are
+                        forked. [False]
+  --no-sendfile         Disables the use of ``sendfile()``. [None]
+  --reuse-port          Set the ``SO_REUSEPORT`` flag on the listening socket.
+                        [False]
+  --chdir CHDIR         Change directory to specified directory before loading
+                        apps. [/]
+  -D, --daemon          Daemonize the Gunicorn process. [False]
+  -e ENV, --env ENV     Set environment variables in the execution
+                        environment. [[]]
+  -p FILE, --pid FILE   A filename to use for the PID file. [None]
+  --worker-tmp-dir DIR  A directory to use for the worker heartbeat temporary
+                        file. [None]
+  -u USER, --user USER  Switch worker processes to run as this user. [0]
+  -g GROUP, --group GROUP
+                        Switch worker process to run as this group. [0]
+  -m INT, --umask INT   A bit mask for the file mode on files written by
+                        Gunicorn. [0]
+  --initgroups          If true, set the worker process's group access list
+                        with all of the [False]
+  --forwarded-allow-ips STRING
+                        Front-end's IPs from which allowed to handle set
+                        secure headers. [127.0.0.1]
+  --access-logfile FILE
+                        The Access log file to write to. [None]
+  --disable-redirect-access-to-syslog
+                        Disable redirect access logs to syslog. [False]
+  --access-logformat STRING
+                        The access log format. [%(h)s %(l)s %(u)s %(t)s
+                        "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"]
+  --error-logfile FILE, --log-file FILE
+                        The Error log file to write to. [-]
+  --log-level LEVEL     The granularity of Error log outputs. [info]
+  --capture-output      Redirect stdout/stderr to specified file in
+                        :ref:`errorlog`. [False]
+  --logger-class STRING
+                        The logger you want to use to log events in Gunicorn.
+                        [gunicorn.glogging.Logger]
+  --log-config FILE     The log config file to use. [None]
+  --log-syslog-to SYSLOG_ADDR
+                        Address to send syslog messages. [udp://localhost:514]
+  --log-syslog          Send *Gunicorn* logs to syslog. [False]
+  --log-syslog-prefix SYSLOG_PREFIX
+                        Makes Gunicorn use the parameter as program-name in
+                        the syslog entries. [None]
+  --log-syslog-facility SYSLOG_FACILITY
+                        Syslog facility name [user]
+  -R, --enable-stdio-inheritance
+                        Enable stdio inheritance. [False]
+  --statsd-host STATSD_ADDR
+                        ``host:port`` of the statsd server to log to. [None]
+  --dogstatsd-tags DOGSTATSD_TAGS
+                        A comma-delimited list of datadog statsd (dogstatsd)
+                        tags to append to []
+  --statsd-prefix STATSD_PREFIX
+                        Prefix to use when emitting statsd metrics (a trailing
+                        ``.`` is added, []
+  -n STRING, --name STRING
+                        A base to use with setproctitle for process naming.
+                        [None]
+  --pythonpath STRING   A comma-separated list of directories to add to the
+                        Python path. [None]
+  --paste STRING, --paster STRING
+                        Load a PasteDeploy config file. The argument may
+                        contain a ``#`` [None]
+  --proxy-protocol      Enable detect PROXY protocol (PROXY mode). [False]
+  --proxy-allow-from PROXY_ALLOW_IPS
+                        Front-end's IPs from which allowed accept proxy
+                        requests (comma separate). [127.0.0.1]
+  --keyfile FILE        SSL key file [None]
+  --certfile FILE       SSL certificate file [None]
+  --ssl-version SSL_VERSION
+                        SSL version to use. [_SSLMethod.PROTOCOL_TLS]
+  --cert-reqs CERT_REQS
+                        Whether client certificate is required (see stdlib ssl
+                        module's) [VerifyMode.CERT_NONE]
+  --ca-certs FILE       CA certificates file [None]
+  --suppress-ragged-eofs
+                        Suppress ragged EOFs (see stdlib ssl module's) [True]
+  --do-handshake-on-connect
+                        Whether to perform SSL handshake on socket connect
+                        (see stdlib ssl module's) [False]
+  --ciphers CIPHERS     SSL Cipher suite to use, in the format of an OpenSSL
+                        cipher list. [None]
+  --paste-global CONF   Set a PasteDeploy global config variable in
+                        ``key=value`` form. [[]]
+  --strip-header-spaces
+                        Strip spaces present between the header name and the
+                        the ``:``. [False]
+
 tar --help
 Usage: tar [OPTION...] [FILE]...
 GNU `tar' saves many files together into a single tape or disk archive, and can
