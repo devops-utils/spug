@@ -27,8 +27,8 @@ sudo docker rm giraffe
 sudo docker run -d --restart=always --name=giraffe -p 8032:80 -v $(pwd)/giraffe-data:/data yiluxiangbei/giraffe:v1.0
 sudo docker run -d --restart=always --name=giraffe -p 8032:80 -p 9001:9001 -p 9002:9002 -v $(pwd)/giraffe-data:/data yiluxiangbei/giraffe:v1.0
 sudo docker exec giraffe init_giraffe admin giraffe.dev
-rm -rf giraffe-data/spug/spug_web
-cp -r spug_web/ giraffe-data/spug
+rm -rf giraffe-data/spug/spug_web/*
+cp -r spug_web/build/ giraffe-data/spug/spug_web/
 cp -r spug_api/ giraffe-data/spug
 
 sudo docker stop spug
