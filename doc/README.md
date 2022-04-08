@@ -22,6 +22,7 @@ sudo docker push yiluxiangbei/giraffe:v1.0
 
 cd ../../
 sudo docker stop giraffe
+sudo docker start giraffe
 sudo docker rm giraffe
 sudo docker run -d --restart=always --name=giraffe -p 8032:80 -v $(pwd)/giraffe-data:/data yiluxiangbei/giraffe:v1.0
 sudo docker run -d --restart=always --name=giraffe -p 8032:80 -p 9001:9001 -p 9002:9002 -v $(pwd)/giraffe-data:/data yiluxiangbei/giraffe:v1.0
