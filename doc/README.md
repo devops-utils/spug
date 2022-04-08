@@ -91,6 +91,7 @@ https://github.com/juicedata/juicefs
 Kestra
 https://github.com/kestra-io/kestra
 https://kestra.io/
+https://demo.kestra.io/ui/
 ```
 
 ```shell
