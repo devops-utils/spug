@@ -88,6 +88,9 @@ https://spug.cc/docs/deploy-config#transfer
 
 https://my.oschina.net/u/5324949/blog/5510281
 https://github.com/juicedata/juicefs
+Kestra
+https://github.com/kestra-io/kestra
+https://kestra.io/
 ```
 
 ```shell
