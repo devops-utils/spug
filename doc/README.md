@@ -24,6 +24,7 @@ cd ../../
 sudo docker stop giraffe
 sudo docker rm giraffe
 sudo docker run -d --restart=always --name=giraffe -p 8032:80 -v $(pwd)/giraffe-data:/data yiluxiangbei/giraffe:v1.0
+rm -rf giraffe-data/spug/spug_web
 cp -r spug_web/ giraffe-data/spug
 cp -r spug_api/ giraffe-data/spug
 sudo docker exec giraffe init_giraffe admin giraffe.dev
