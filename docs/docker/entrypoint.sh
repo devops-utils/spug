@@ -30,6 +30,9 @@ DATABASES = {
     }
 }
 EOF
+else
+  tar xf /tmp/spug.tar.gz -C /data1/
+  cp -r /data1/spug /data/spug
 fi
 
 if [ ! -d /data/mysql ]; then

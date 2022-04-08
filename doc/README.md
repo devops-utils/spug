@@ -3,6 +3,7 @@ cd spug
 git pull
 cd spug_web
 cnpm install
+rm -rf build
 npm run build
 cd ../../
 tar -czvf spug.tar.gz spug --exclude=spug_web/node_modules/* --exclude=spug-data/* --exclude=doc/*
