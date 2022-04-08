@@ -11,7 +11,7 @@ if [ ! -d /data/spug ]; then
     SECRET_KEY=$(< /dev/urandom tr -dc '!@#%^.a-zA-Z0-9' | head -c50)
     cat > /data/spug/spug_api/spug//overrides.py << EOF
 DEBUG = False
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['0.0.0.0']
 SECRET_KEY = '${SECRET_KEY}'
 
 DATABASES = {
