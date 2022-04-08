@@ -43,6 +43,9 @@ sudo docker rm spug
 Giraffe 长劲鹿
 GIRAFFE
 
+sudo yum install figlet
+figlet "giraffe web terminal"
+
 yum install -y yum-utils
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 yum install docker-ce docker-ce-cli containerd.io
