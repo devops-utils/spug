@@ -41,6 +41,10 @@ sudo docker exec spug init_spug admin spug.dev
 
 sudo docker exec -it spug bash
 sudo docker exec -it giraffe bash
+mysqldump -uroot -p spug > spug.sql
+mysql -uroot -p
+create database giraffe;
+mysql -uroot -p giraffe < spug.sql
 
 sudo docker cp docs/docker/nginx.conf spug:/etc/nginx/nginx.conf
 sudo docker stop spug
